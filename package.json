@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/app.js --ignore db.json"
+    "dev": "nodemon src/app.js --mode development",
+    "start": "node src/app.js --mode production"
   },
   "keywords": [],
   "author": "",

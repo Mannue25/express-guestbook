@@ -8,7 +8,7 @@ const path = require('path');
 const app = express();
 
 // Configuración.
-const port = 3000;
+const port = process.env.PORT || 3000
 app.set('port', process.env.PORT|| port);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -25,6 +25,6 @@ app.use((req, res) => {
 });
 
 // Arrancar la app.
-app.listen(app.get('port'), () => {
-    console.log('El servidor ha arracando', app.get('port'));
+app.listen(port, (req, res)  => {
+    console.log(`El puerto está corriendo en el ${port}`)
 })
